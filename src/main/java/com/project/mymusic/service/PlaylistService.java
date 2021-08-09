@@ -6,26 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.project.mymusic.model.Playlist;
 import com.project.mymusic.repository.PlaylistRepository;
+
 @Service
 public class PlaylistService {
-@Autowired
- private PlaylistRepository repo;
-public List<Playlist> searchAll() {
- return this.repo.findAll();
- }
-public Playlist searchById(Long id) {
- Optional<Playlist> obj = this.repo.findById(id);
- return obj.orElseThrow();
-}
-public Playlist create(Playlist obj) {
- return this.repo.save(obj);
- }
-public Playlist update(Playlist obj) {
- this.searchById(obj.getId());
- return this.repo.save(obj);
- }
-public void delete(Long id) {
- this.searchById(id);
- this.repo.deleteById(id);
- }
+	@Autowired
+	private PlaylistRepository repo;
+
+	public List<Playlist> searchAll() {
+		return this.repo.findAll();
+	}
+
+	public Playlist searchById(Long id) {
+		Optional<Playlist> obj = this.repo.findById(id);
+		return obj.orElseThrow();
+	}
+
+	public Playlist create(Playlist obj) {
+		return this.repo.save(obj);
+	}
+
+	public Playlist update(Playlist obj) {
+		this.searchById(obj.getId());
+		return this.repo.save(obj);
+	}
+
+	public void delete(Long id) {
+		this.searchById(id);
+		this.repo.deleteById(id);
+	}
 }

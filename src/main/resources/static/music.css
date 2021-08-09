@@ -1,0 +1,62 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+ 
+   background-image: url(download.jfif);
+ }
+ h1 {
+   color: #080808;
+
+   <br/>
+
+
+   <form method="POST" action="">
+       <label>"username": </label>
+       <br/>
+       <input type="text" placeholder="username"></input>
+       <br/>
+       <label for="password">Password:</label>
+       <br/>
+       <input type="password" placeholder="password"><input>
+       <br/>
+       <button type= "submit"></button>Login>/button>
+           
+   </form>
+   <br/>
+
+   let div = document.querySelector('.home');
+function getData(url, callback) {
+
+ 
+
+let jsonData;
+fetch(url)
+.then((response) => response.json())
+.then((data) => (jsonData = data))
+.then(() => callback(jsonData.data))
+.catch((error) => console.log(error));
+}
+
+ 
+
+getData('localhost:9003/read', useData);
+function useData(arrOfObjs) {
+const playlist = document.createElement('div');
+div.appendChild(playlistContainer);
+console.log(arrOfObjs);
+arrOfObjs.forEach((animal) => {
+const pName = document.createElement('p');
+const pSinger = document.createElement('p');
+const pTime = document.createElement('p');
+
+pName.innerText = playlist.name;
+pSinger.innerText = playlist.singer;
+pTime.innertime = playlist.time
+
+playlistContainer.appendChild(pName);
+playlistContainer.appendChild(pSinger);
+playlistContainer.appendChild(pTime);
+
+div.appendChild(songContainer);
+}
+
+
