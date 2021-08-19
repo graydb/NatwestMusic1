@@ -3,14 +3,10 @@ pipeline {
        agent any
 stages{
 
-stage('Clone Repo'){
-steps{
-sh 'git clone https://github.com/graydb/NatwestMusic1.git'
-}
-}
+
 stage ('Build Jar'){
 steps{
-sh'ls'
+sh 'ls'
 sh 'cd NatwestMusic1 && ls'}
 }
 stage('Run Jar'){
@@ -21,4 +17,4 @@ steps{sh 'ls'}
 
 
 
-}
+
