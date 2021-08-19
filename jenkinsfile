@@ -6,8 +6,7 @@ stages{
 
 stage ('Build Jar'){
 steps{
-sh 'ls'
-sh 'cd NatwestMusic1 && ls'}
+sh 'mvn clean install'
 }
 stage('Run Jar'){
 steps{sh 'ls'}
